@@ -1,0 +1,92 @@
+Report : timing
+        -path full
+        -delay max
+        -nworst 3
+        -max_paths 3
+Design : adder_2bit
+Path Type: max
+
+  Startpoint: temp_reg_0_/QN (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: sum_reg_0_/D (rising edge-triggered flip-flop clocked by clk)
+  Path Group: reg2reg
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock source latency                    -0.20      -0.20
+  temp_reg_0_/CLK                          0.20       0.00 r
+  temp_reg_0_/QN                          32.60      32.60 f
+  U17/A                                    0.00      32.60 f
+  U17/Y                                   10.00      42.60 r
+  sum_reg_0_/D                             0.00      42.60 r
+  data arrival time                                  42.60
+
+  clock clk (rise edge)                  500.00     500.00
+  clock network delay                      3.90     503.90
+  setup                                  -8.60     495.30
+  data required time                                 495.30
+  -----------------------------------------------------------
+  data required time                                 495.30
+  data arrival time                                  42.60
+  -----------------------------------------------------------
+  slack (MET)                                       452.69
+
+
+  Startpoint: b[1] (input port clocked by clk)
+  Endpoint: temp_reg_1_/D (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  input external delay                     0.10       0.10
+  input drive delay                        3.90       4.00
+  b[1]                                     0.00       4.00 r
+  FE_RC_0_0/B                              0.30       4.30 r
+  FE_RC_0_0/Y                             17.60      21.90 r
+  U29/C                                    0.00      21.90 r
+  U29/Y                                   11.00      32.90 f
+  U30/C                                    0.00      32.90 f
+  U30/Y                                    8.80      41.70 r
+  temp_reg_1_/D                            0.00      41.70 r
+  data arrival time                                  41.70
+
+  clock clk (rise edge)                  500.00     500.00
+  clock network delay                      3.90     503.90
+  setup                                  -8.85     495.04
+  data required time                                 495.04
+  -----------------------------------------------------------
+  data required time                                 495.04
+  data arrival time                                  41.70
+  -----------------------------------------------------------
+  slack (MET)                                       453.34
+
+
+  Startpoint: temp_reg_2_/QN (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: cout_reg/D (rising edge-triggered flip-flop clocked by clk)
+  Path Group: reg2reg
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock source latency                    -0.20      -0.20
+  temp_reg_2_/CLK                          0.20       0.00 r
+  temp_reg_2_/QN                          33.20      33.20 f
+  U19/A                                    0.00      33.20 f
+  U19/Y                                    7.60      40.80 r
+  cout_reg/D                               0.10      40.90 r
+  data arrival time                                  40.90
+
+  clock clk (rise edge)                  500.00     500.00
+  clock network delay                      3.90     503.90
+  setup                                  -7.93     495.96
+  data required time                                 495.96
+  -----------------------------------------------------------
+  data required time                                 495.96
+  data arrival time                                  40.90
+  -----------------------------------------------------------
+  slack (MET)                                       455.06
+
